@@ -1,0 +1,34 @@
+{% extends 'admin/basic.html' %}
+
+{% block main %}
+<div class="container-fluid pt-4 px-4">
+    <!-- Profile Header Section -->
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="rounded p-4" style="background-color: #e8f5e9">
+                <!-- Cover Photo -->
+                <div class="cover-photo" style="height: 300px; background-color: #60ab8a; border-radius: 8px 8px 0 0; position: relative; background-image: url('../static/admin/img/WhatsApp Image 2025-04-05 at 12.21.01_d07e2dcd.jpg'); background-size: cover; background-position: center;">                    <!-- Profile Picture -->
+                    <div style="position: absolute; bottom: -50px; left: 20px; border: 4px solid #e8f5e9; border-radius: 50%;">
+                        {% if user and user.profile %}
+                            <img class="rounded-circle" src="/media/{{ user.profile }}" alt="Profile Picture" style="width: 150px; height: 150px; object-fit: cover;">
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- Profile Info -->
+                <div class="profile-info mt-5 pt-4">
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div>
+                            <h2 class="text-success mb-1">{{ request.session.login_name }}</h2>
+                        </div>
+                        <div class="mb-2">
+                            <a href="/edit_profile" class="btn btn-success me-2" style="background-color: #60ab8a; border: none; text-decoration: none;">Edit Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

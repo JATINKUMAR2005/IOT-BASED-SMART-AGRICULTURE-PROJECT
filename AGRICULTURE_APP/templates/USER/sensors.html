@@ -1,0 +1,155 @@
+{% extends 'USER/basic.html' %}
+
+{% block main %}
+
+<script>
+function updateSensors() {
+    fetch('/api/live-sensors/')
+        .then(response => response.json()
+        )
+        .then(data => {
+            document.querySelector('.water-level .card-value').textContent = data.water_level;
+            document.querySelector('.water-level .progress-bar').style.width = data.water_level;
+            document.querySelector('.water-level .last-updated').innerHTML = `<i class="fas fa-clock me-1"></i>Updated ${data.water_updated}`;
+
+            document.querySelector('.soil-moisture .card-value').textContent = data.soil_moisture;
+            document.querySelector('.soil-moisture .progress-bar').style.width = data.soil_moisture;
+            document.querySelector('.soil-moisture .last-updated').innerHTML = `<i class="fas fa-clock me-1"></i>Updated ${data.soil_updated}`;
+
+            document.querySelector('.ir-sensor .card-value').textContent = data.ir_status;
+            document.querySelector('.ir-sensor .last-updated').innerHTML = `<i class="fas fa-clock me-1"></i>Updated ${data.ir_updated}`;
+
+            document.querySelector('.smoke-sensor .card-value').textContent = data.smoke_status;
+            document.querySelector('.smoke-sensor .last-updated').innerHTML = `<i class="fas fa-clock me-1"></i>Updated ${data.smoke_updated}`;
+
+            document.querySelector('.fire-sensor .card-value').textContent = data.fire_status;
+            document.querySelector('.fire-sensor .last-updated').innerHTML = `<i class="fas fa-clock me-1"></i>Updated ${data.fire_updated}`;
+        })
+        .catch(err => console.error("Failed to load sensor data:", err));
+}
+
+<!--// Call once immediately and then every 1 seconds-->
+updateSensors();
+setInterval(updateSensors, 1000);
+</script>
+
+
+  <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Sensor</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Sensor</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <div class="container py-4">
+        <div class="dashboard-header">
+            <h1><i class="fas fa-sensor-cloud me-2"></i>Smart Farm Dashboard</h1>
+            <p>Real-time monitoring of your agricultural sensors</p>
+        </div>
+        
+        <div class="row">
+            <!-- Water Level Card -->
+            <div class="col-md-4">
+                <div class="sensor-card water-level text-white">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h5 class="card-title">Water Level</h5>
+                        <h2 class="card-value">33%</h2>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 33%"></div>
+                        </div>
+                        <div class="last-updated">
+                            <i class="fas fa-clock me-1"></i>Updated 2 mins ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Soil Moisture Card -->
+            <div class="col-md-4">
+                <div class="sensor-card soil-moisture text-white">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h5 class="card-title">Soil Moisture</h5>
+                        <h2 class="card-value">88%</h2>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                        <div class="last-updated">
+                            <i class="fas fa-clock me-1"></i>Updated 1 min ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- IR Sensor Card -->
+            <div class="col-md-4">
+                <div class="sensor-card ir-sensor text-white">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h5 class="card-title">IR Sensor</h5>
+                        <h2 class="card-value">No Object</h2>
+                        <span class="card-status">Normal</span>
+                        <div class="last-updated">
+                            <i class="fas fa-clock me-1"></i>Updated just now
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Smoke Sensor Card -->
+            <div class="col-md-6">
+                <div class="sensor-card smoke-sensor text-white">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-smog"></i>
+                        </div>
+                        <h5 class="card-title">Smoke Sensor</h5>
+                        <h2 class="card-value">Not Detected</h2>
+                        <span class="card-status">Safe</span>
+                        <div class="last-updated">
+                            <i class="fas fa-clock me-1"></i>Updated 5 mins ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fire Sensor Card -->
+            <div class="col-md-6">
+                <div class="sensor-card fire-sensor text-white">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h5 class="card-title">Fire Sensor</h5>
+                        <h2 class="card-value">Not Detected</h2>
+                        <span class="card-status">Safe</span>
+                        <div class="last-updated">
+                            <i class="fas fa-clock me-1"></i>Updated 5 mins ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4 text-muted">
+            <small>System status: <span class="text-success">All systems normal</span> • Auto refresh in 30 seconds</small>
+        </div>
+    </div>
+
+
+{% endblock %}

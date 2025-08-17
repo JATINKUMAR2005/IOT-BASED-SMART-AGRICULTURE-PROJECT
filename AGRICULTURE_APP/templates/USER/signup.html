@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EcoFarm - Gardening Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../static/user/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/user/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../static/user/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../static/user/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/user/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/user/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!--    &lt;!&ndash; Topbar Start &ndash;&gt;-->
+<!--    <div class="container-fluid bg-dark text-light px-0 py-2">-->
+<!--        <div class="row gx-0 d-none d-lg-flex">-->
+<!--            <div class="col-lg-7 px-5 text-start">-->
+<!--                <div class="h-100 d-inline-flex align-items-center me-4">-->
+<!--                    <span class="fa fa-phone-alt me-2"></span>-->
+<!--                    <span>+012 345 6789</span>-->
+<!--                </div>-->
+<!--                <div class="h-100 d-inline-flex align-items-center">-->
+<!--                    <span class="far fa-envelope me-2"></span>-->
+<!--                    <span>info@example.com</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-5 px-5 text-end">-->
+<!--                <div class="h-100 d-inline-flex align-items-center mx-n2">-->
+<!--                    <span>Follow Us:</span>-->
+<!--                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>-->
+<!--                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>-->
+<!--                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>-->
+<!--                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Topbar End &ndash;&gt;-->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light sticky-top p-0">
+        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0">EcoFarm</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+<!--            <div class="navbar-nav ms-auto p-4 p-lg-0">-->
+<!--                <a href="/userhome" class="nav-item nav-link active">Home</a>-->
+<!--                <a href="/userabout" class="nav-item nav-link">About</a>-->
+<!--                <a href="/userservice" class="nav-item nav-link">Services</a>-->
+<!--                <a href="/userproject" class="nav-item nav-link">Projects</a>-->
+<!--                <div class="nav-item dropdown">-->
+<!--                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>-->
+<!--                    <div class="dropdown-menu bg-light m-0">-->
+<!--                        <a href="/userfeature" class="dropdown-item">Features</a>-->
+<!--                        <a href="complaint_form" class="dropdown-item">Free Quote</a>-->
+<!--                        <a href="/userteam" class="dropdown-item">Our Team</a>-->
+<!--                        <a href="/usertestimonial" class="dropdown-item">Testimonial</a>-->
+<!--                        <a href="404.html" class="dropdown-item">404 Page</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <a href="/usercontact" class="nav-item nav-link">Contact</a>-->
+<!--            </div>-->
+<!--            <a href="/userlogin" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">login<i class="fa fa-arrow-right ms-3"></i></a>-->
+<!--            <a href="" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>-->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">SignUp</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+<!--            <div class="row g-5">-->
+                <div class="mx-auto p-4 rounded-3 bg-light" style="max-width: 400px;" data-wow-delay="0.1s">
+                    <form method="post" action="/register_Customer" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-floating mb-3">
+                                <input type="text" name="username" id="username" class="form-control"
+                                       placeholder="Username should contain unique symbols and numbers"
+                                       pattern="^(?=.*[!@#$%^&*()_+\-=\[\]{};':\\\|,.<>\/?])(?=.*\d).+$"
+                                       title="Username must contain at least one special character and one number"
+                                       required>
+                                <label for="username">Username</label>
+                                <div class="invalid-feedback">
+                                    Username must contain at least one special character and one number
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="name@example.com">
+                                <label>Email address</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                <label>Password</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="text" name="first_name" class="form-control"  placeholder="Password">
+                                <label>First Name</label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="text" name="last_name" class="form-control" placeholder="Password">
+                                <label>Last Name</label>
+                            </div>
+
+<!--                            <div class="form-floating mb-3">-->
+<!--                                <select name="role" class="form-select" id="floatingSelect"-->
+<!--                                    aria-label="Floating label select example">-->
+<!--                                    <option value="" selected>Open this select menu</option>-->
+<!--                                    <option value="admin">ADMIN</option>-->
+<!--                                    <option value="user">USER</option>-->
+<!--                                </select>-->
+<!--                                <label for="floatingSelect">Select the Category</label>-->
+<!--                            </div>-->
+
+                            <div class="form-floating mb-4">
+                                <input type="tel" name="phone" class="form-control" placeholder="Password">
+                                <label>Phone Number</label>
+                            </div>
+
+                            <div class="mb-3" style="text-align: left">
+                                <label class="form-label" for="dp">Profile Picture</label>
+                                <input class="form-control" type="file" id="dp" name="profile" multiple>
+                            </div>
+
+                            <div class="col-sm-10" style="text-align: left">
+                                <label>Gender</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender"
+                                           id="male" value="male" checked>
+                                    <label class="form-check-label" for="male">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender"
+                                           id="female" value="female">
+                                    <label class="form-check-label" for="female">
+                                        Female
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender"
+                                           id="other" value="other">
+                                    <label class="form-check-label" for="other">
+                                        Other
+                                    </label>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+<!--                                <a href="">Forgot Password</a>-->
+                            </div>
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
+                            <p class="text-center mb-0">Already have an Account? <a href="/">Sign In</a></p>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+<!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Our Office</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>INFOLABZ IT SERVICES,NAVRANGPURA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>7878292220</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>http://127.0.0.1:8000/userhome</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Services</h4>
+                    <a class="btn btn-link" href="">Smart Irrigation Management</a>
+                    <a class="btn btn-link" href="">Precision Farming & Crop Monitoring</a>
+                    <a class="btn btn-link" href="">Climate & Environmental Monitoring</a>
+                    <a class="btn btn-link" href="">Smart Greenhouse Automation</a>
+                    <a class="btn btn-link" href="">Farm Security & Surveillance</a>
+                    <a class="btn btn-link" href="">Remote Monitoring & Control</a>
+                    <a class="btn btn-link" href="">Supply Chain & Inventory Management</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-light border-light w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const usernameInput = document.getElementById('username');
+
+        usernameInput.addEventListener('input', function() {
+            // Check for at least one special character and one number
+            const hasSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.value);
+            const hasNumber = /\d/.test(this.value);
+
+            if (this.value.length > 0 && (!hasSpecialChar || !hasNumber)) {
+                this.setCustomValidity("Username must contain at least one special character and one number");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+    });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/user/lib/wow/wow.min.js"></script>
+    <script src="../static/user/lib/easing/easing.min.js"></script>
+    <script src="../static/user/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/user/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/user/lib/counterup/counterup.min.js"></script>
+    <script src="../static/user/lib/parallax/parallax.min.js"></script>
+    <script src="../static/user/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../static/user/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../static/user/js/main.js"></script>
+</body>
+
+</html>

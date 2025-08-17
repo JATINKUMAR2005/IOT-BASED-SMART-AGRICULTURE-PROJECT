@@ -1,0 +1,114 @@
+{% extends 'admin/basic.html' %}
+
+{% block main %}
+<!--    <div style="background-color: #60ab8a">-->
+            <!-- Sale & Revenue Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col">
+                        <div class="rounded d-flex align-items-center justify-content-between p-4" style="background-color: #e8f5e9">
+                            <i class="bi bi-person-circle fa-3x text-success"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total Users</p>
+                                <h6 class="mb-0">{{ total_users }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="rounded d-flex align-items-center justify-content-between p-4" style="background-color: #e8f5e9">
+                            <i class="bi bi-hdd-fill fa-3x text-success"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total Devices</p>
+                                <h6 class="mb-0">{{ total_users }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="rounded d-flex align-items-center justify-content-between p-4" style="background-color: #e8f5e9">
+                            <i class="bi bi-cpu-fill fa-3x text-success"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total Sensors used</p>
+                                <h6 class="mb-0">{{ total_sensors }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Table for displaying user details -->
+                <div class="container-fluid pt-4 px-4">
+                    <div class="text-center rounded p-4" style="background-color: #e8f5e9">
+                        <h3 class="mb-4">Registered Users</h3>
+                        <div class="rounded table-responsive">
+                            <table class="border-success table text-start align-middle table-bordered table-hover mb-0">
+                                <thead>
+                                <tr class="text-dark">
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Joined Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.username }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.role }}</td>
+                                    <td>{{ user.date_joined }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5" class="text-center">No users found</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Move Contact Table Outside -->
+                <div class="container-fluid pt-4 px-4">
+                    <div class="text-center rounded p-4" style="background-color: #e8f5e9">
+                        <h3 class="mb-4">Contact Messages</h3>
+                        <div class="rounded table-responsive">
+                            <table class="border-success table text-start align-middle table-bordered table-hover mb-0">
+                                <thead>
+                                <tr class="text-dark">
+                                    <th scope="col">Sr No.</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for contact in contacts %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ contact.name }}</td>
+                                    <td>{{ contact.email }}</td>
+                                    <td>{{ contact.subject }}</td>
+                                    <td>{{ contact.message }}</td>
+                                    <td>{{ contact.created_at }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="7" class="text-center">No contact messages found</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+<!-- Sale & Revenue End -->
+<!--    </div>-->
+
+
+{% endblock %}

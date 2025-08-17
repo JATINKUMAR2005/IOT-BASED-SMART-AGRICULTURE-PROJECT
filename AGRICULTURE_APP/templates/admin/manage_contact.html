@@ -1,0 +1,46 @@
+{% extends 'admin/basic.html' %}
+{% block main %}
+<div class="container-fluid pt-4 px-4">
+    <div class="text-center rounded p-4" style="background-color: #e8f5e9">
+        <h3 class="mb-4">Contact Messages</h3>
+        <div class="rounded table-responsive">
+            <table class="border-success table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>
+                            <a href="/view_users">
+                                {{ contact.user_id }}
+                            </a>
+                        </td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.subject }}</td>
+                        <td>{{ contact.message }}</td>
+                        <td>{{ contact.created_at }}</td>
+                        <td>
+                            <a href="/delete-contact/{{contact.id}}" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" class="text-center">No contact messages found</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

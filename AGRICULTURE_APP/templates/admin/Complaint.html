@@ -1,0 +1,59 @@
+{% extends 'admin/basic.html' %}
+
+{% block main %}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="text-center rounded p-4" style="background-color: #e8f5e9">
+        <h3 class="mb-4">Complaints</h3>
+        <div class="rounded table-responsive">
+            <table class="border-success table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if complaints %}
+                        {% for complaint in complaints %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>
+                                    <a href="/view_users">
+                                        {{ complaint.user_id }}
+                                    </a>
+                                </td>
+                                <td>{{ complaint.name }}</td>
+                                <td>{{ complaint.email }}</td>
+                                <td>{{ complaint.mobile }}</td>
+                                <td>{{ complaint.message }}</td>
+                                <td>{{ complaint.created_at|date:"Y-m-d H:i" }}</td>
+                                <td>
+                                    {% if complaint.status != "Success" %}
+                                        <a href="/resolve-complaint/{{complaint.id}}" class="btn btn-sm btn-success">Resolve</a>
+                                    {% else %}
+                                        <span class="text-success fw-bold">Resolved</span>
+                                    {% endif %}
+                                    <a href="/delete-complaint/{{complaint.id}}" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="8" class="text-center">No complaints found</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
